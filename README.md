@@ -22,3 +22,12 @@ This repo uses a Cargo build script (`build.rs`). If a crate has a `build.rs` at
 - `algos::dispatch(name, args)` to run the selected algo
 
 The generated registry is not checked into git; it lives under `target/` (for example: `target/debug/build/<crate>/out/algos_registry.rs`).
+
+**Real Build Script Use Cases**
+
+- FFI/native deps: probe system libraries, set linker flags, compile C/C++ code, generate bindings.
+- Build-time codegen: generate Rust from protobuf/OpenAPI/JSON schema/DSLs and `include!` it.
+- Build metadata: embed git SHA/version/build info via `cargo:rustc-env=...`.
+- Environment-based cfg: detect headers/CPU features/platform details and emit `cargo:rustc-cfg=...`.
+- Asset pipeline: preprocess/bundle assets and generate an index for embedding.
+- Precomputed tables: generate lookup tables at build time instead of runtime.
