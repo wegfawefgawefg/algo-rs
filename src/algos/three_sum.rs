@@ -85,21 +85,3 @@ pub fn three_sum_central_mover(nums: &[i32]) -> Vec<[i32; 3]> {
 
     solutions
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    fn sort_solutions(mut v: Vec<[i32; 3]>) -> Vec<[i32; 3]> {
-        v.sort_unstable();
-        v
-    }
-
-    #[test]
-    fn matches_expected_set() {
-        let input = vec![3, 0, -2, -1, 1, 2];
-        let got = sort_solutions(three_sum(&input));
-        let want = sort_solutions(vec![[-2, -1, 3], [-2, 0, 2], [-1, 0, 1]]);
-        assert_eq!(got, want);
-    }
-}

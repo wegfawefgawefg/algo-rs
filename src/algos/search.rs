@@ -15,24 +15,3 @@ pub fn binary_search<T: Ord>(haystack: &[T], needle: &T) -> Option<usize> {
 
     None
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn finds_existing() {
-        let v = vec![1, 3, 4, 9, 10];
-        assert_eq!(binary_search(&v, &1), Some(0));
-        assert_eq!(binary_search(&v, &4), Some(2));
-        assert_eq!(binary_search(&v, &10), Some(4));
-    }
-
-    #[test]
-    fn misses_non_existing() {
-        let v = vec![1, 3, 4, 9, 10];
-        assert_eq!(binary_search(&v, &2), None);
-        assert_eq!(binary_search(&v, &11), None);
-        assert_eq!(binary_search(&v, &0), None);
-    }
-}

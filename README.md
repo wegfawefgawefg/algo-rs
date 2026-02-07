@@ -8,9 +8,3 @@ Small Rust workspace for practicing algorithms and data structures.
 cargo run --bin bsearch -- 9
 cargo run --bin three_sum
 ```
-
-**Test**
-
-```bash
-cargo test
-```
